@@ -1,89 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="shortcut icon" href="/image/adex.jpg" type="image/x-icon">
-
-  <title>Parallax Agriculture</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      overflow-x: hidden;
-    }
-    .parallax-container {
-        font: bold;
-      position: relative;
-      height: 100vh;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    .parallax-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #0f1410;
-      transition: font-size 0.3s ease; /* Add a smooth transition for font size */
-    }
-    .parallax-section {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 2em;
-      color: #7ea732;
-    }
-  </style>
-
-
-</head>
-
-
-<body>
-  <div class="parallax-container" style="background-image: url('/image/agrocare.jpg');">
-    <div class="parallax-content">
-      <h1 id="parallax-title">AGROPRENEURSHIP</h1>
+<link rel="stylesheet" href="style.css">
+<div class="quiz-container" id="quiz">
+    <div class="quiz-header">
+      <h2 class="header-txt">Technology Quiz</h2>
+    </div>
+    <div class="quiz-body">
+      <h2 id="question">Question Text</h2>
+      <ul>
+        <li>
+          <input type="radio" name="answer" id="a" class="answer" />
+          <label for="a" id="a_text">Questions</label>
+        </li>
+        <li>
+          <input type="radio" name="answer" id="b" class="answer" />
+          <label for="b" id="b_text">Questions</label>
+        </li>
+        <li>
+          <input type="radio" name="answer" id="c" class="answer" />
+          <label for="c" id="c_text">Questions</label>
+        </li>
+        <li>
+          <input type="radio" name="answer" id="d" class="answer" />
+          <label for="d" id="d_text">Questions</label>
+        </li>
+      </ul>
+    </div>
+    <div class="quiz-footer">
+      <div class="quiz-details"></div>
+      <button type="button" id="btn">Submit</button>
     </div>
   </div>
-
-  <div class="parallax-section">
-    <p>THE FOOD BASKET OF THE NATION</p>
-  </div>
-</div>
-
-<div class="parallax-container" style="background-image: url('/image/adex.jpg');">
-  <div class="parallax-content">
-    <h2>poultry soul</h2>
-    <h2>GOOD PRODUCT OF AGRICULTURE</h2>
-  </div>
-</div>
-
-<div class="parallax-section">
-  <p>THANKS FOR YOUR PATRONAGE 😌</p>
-</div>
-
-
-<!-- Add more sections as needed -->
-
-<script>
-  window.addEventListener('scroll', function () {
-    const scrolled = window.scrollY;
-    const title = document.getElementById('parallax-title');
-    const description = document.getElementById('parallax-description');
-
-    // Adjust font size based on scroll position
-    title.style.fontSize = 2 + scrolled / 100 + 'em';
-    description.style.fontSize = 1 + scrolled / 100 + 'em';
-  });
-</script>
-</body>
-</html>
+  <script src="script.js"></script>
