@@ -2,20 +2,20 @@
 
 const quizData = [
  {
-  question: "Where is the correct place to insert a JavaScript?",
-  a: "The <head> section",
-  b: "The <body> section",
-  c: "Both the <head> and the <body> section are correct",
+  question: "What is the opposite of women?",
+  a: "boy",
+  b: "man",
+  c: "men",
   d: "none of the above",
   correct: "c"
  },
 
  {
-  question: "Which language runs in a web browser?",
-  a: "Java",
-  b: "C",
-  c: "Python",
-  d: "JavaScript",
+  question: "What is the colour of nigeria flag?",
+  a: "red white",
+  b: "white green red",
+  c: "yellow green yellow",
+  d: "Green white green",
   correct: "d"
  },
  {
