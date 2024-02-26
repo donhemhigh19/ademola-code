@@ -1,122 +1,119 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
-
+/* Include the padding and border in an element's total width and height */
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+    box-sizing: border-box;
+  }
+  
+  /* Remove margins and padding from the list */
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style the list items */
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #8a961d;
+    font-size: 25px;
+    transition: 0.2s;
+  
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  ul li:nth-child(odd) {
+    background: #cfccdb;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: #255a68;
+  }
+  
+  /* When clicked on, add a background color and strike out text */
+  ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+  /* Add a "checked" mark when clicked on */
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  
+  /* Style the close button */
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: #f436cb;
+    padding: 50px 60px;
+    color: rgb(7, 8, 27);
+    text-align: center;
+    font-size: larger;
+  }
+  
+  /* Clear floats after the header */
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 15px;
+    float: left;
+    font-size: 30px;
+    border-radius: 15px;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 15px;
+    width: 25%;
+    background: #088030;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+  }
+  
+  .addBtn:hover {
+    background-color: #18801d;
+  }
 
-body {
-  background: rgb(77, 14, 203);
-  background: radial-gradient(
-    circle,
-    rgba(77, 14, 203, 1) 0%,
-    rgb(255, 255, 255) 100%
-  );
-  font-family: "poppins", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.quiz-container {
-  background: #a73636;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-  max-width: 600px;
-  width: 100%;
-}
-
-.quiz-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 2rem;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.quiz-header h2 {
-  font-size: 1.5rem;
-}
-
-.quiz-header p {
-  background: #111;
-  padding: 0.4rem 1rem;
-  color: #1d20cc;
-  border-radius: 5px;
-}
-
-.quiz-body {
-  padding: 2rem 2rem;
-}
-
-.quiz-body h2 {
-  padding: 1rem 0;
-  font-size: 2rem;
-  font-weight: 500;
-  text-align: center;
-  margin: 0;
-}
-
-.quiz-body ul {
-  list-style: none;
-  padding: 0;
-}
-
-.quiz-body ul li {
-  margin: 1rem 0;
-  font-size: 1rem;
-  border: 1px solid #aab7b8;
-  padding: 0.7rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.quiz-body ul li label {
-  cursor: pointer;
-  padding: 0 0.4rem;
-}
-
-.quiz-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
-
-.quiz-footer button {
-  padding: 0.6rem 1.5rem;
-  outline: none;
-  background: #111;
-  border: 0;
-  cursor: pointer;
-  font-family: inherit;
-  border-radius: 5px;
-  color: #e45858;
-  opacity: 0.9;
-  transition: 0.3s ease-in-out;
-}
-
-.quiz-body button {
-  padding: 0.6rem 1rem;
-  outline: none;
-  background: #e97272;
-  border: 0;
-  cursor: pointer;
-  font-family: inherit;
-  border-radius: 5px;
-  color: #ffffff;
-  opacity: 0.9;
-  transition: 0.3s ease-in-out;
-  display: block;
-  margin: 0 auto;
-}
-
-.quiz-footer button:hover {
-  opacity: 1;
-}
+  
+  

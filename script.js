@@ -1,117 +1,55 @@
-"use strict";
-
-const quizData = [
- {
-  question: "What is the opposite of women?",
-  a: "boy",
-  b: "man",
-  c: "men",
-  d: "none of the above",
-  correct: "c"
- },
-
- {
-  question: "What is the colour of nigeria flag?",
-  a: "red white",
-  b: "white green red",
-  c: "yellow green yellow",
-  d: "Green white green",
-  correct: "d"
- },
- {
-  question: "What does CSS stand for?",
-  a: "Central Style Sheets",
-  b: "Cascading Style Sheets",
-  c: "Cascading Simple Sheets",
-  d: "Cars SUVs Sailboats",
-  correct: "b"
- },
- {
-  question: "What does HTML stand for?",
-  a: "Hypertext Markup Language",
-  b: "Hypertext Markdown Language",
-  c: "Hyperloop Machine Language",
-  d: "Helicopters Terminals Motorboats Lamborginis",
-  correct: "a"
- },
- {
-  question: "What year was JavaScript launched?",
-  a: "1996",
-  b: "1995",
-  c: "1994",
-  d: "none of the above",
-  correct: "b"
- }
-];
-
-const quiz = document.querySelector(".quiz-body");
-const answerEl = document.querySelectorAll(".answer");
-const questionEl = document.getElementById("question");
-const footerEl = document.querySelector(".quiz-footer");
-const quizDetailEl = document.querySelector(".quiz-details");
-const liEl = document.querySelector("ul li");
-
-const a_txt = document.getElementById("a_text");
-const b_txt = document.getElementById("b_text");
-const c_txt = document.getElementById("c_text");
-const d_txt = document.getElementById("d_text");
-const btnSubmit = document.getElementById("btn");
-
-let currentQuiz = 0;
-let score = 0;
-
-loadQuiz();
-
-function loadQuiz() {
- deselectAnswers();
- const currentQuizData = quizData[currentQuiz];
- questionEl.innerText = currentQuizData.question;
- a_txt.innerText = currentQuizData.a;
- b_txt.innerText = currentQuizData.b;
- c_txt.innerText = currentQuizData.c;
- d_txt.innerText = currentQuizData.d;
- quizDetailEl.innerHTML = `<p>${currentQuiz + 1} of ${quizData.length}</p>`;
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
 }
 
-// deselect
-function deselectAnswers() {
- answerEl.forEach((answerEl) => {
-  answerEl.checked = false;
- });
-}
-
-// get selected
-function getSelected() {
- let answer;
- answerEl.forEach((answerEls) => {
-  if (answerEls.checked) {
-   answer = answerEls.id;
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
   }
- });
- return answer;
 }
 
-btnSubmit.addEventListener("click", function () {
- const answers = getSelected();
-
- if (answers) {
-  if (answers === quizData[currentQuiz].correct) {
-   score++;
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
   }
-  nextQuestion();
- }
-});
+}, false);
 
-// next Slide
-function nextQuestion() {
- currentQuiz++;
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
 
- if (currentQuiz < quizData.length) {
-  loadQuiz();
- } else {
-  quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} question correctly</h2>
-    <button type="button" onclick="location.reload()">Reload</button>
-    `;
-  footerEl.style.display = "none";
- }
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
 }
