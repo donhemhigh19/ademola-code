@@ -1,15 +1,12 @@
-/* Include the padding and border in an element's total width and height */
 * {
     box-sizing: border-box;
   }
-  
-  /* Remove margins and padding from the list */
+
   ul {
     margin: 0;
     padding: 0;
   }
-  
-  /* Style the list items */
+
   ul li {
     cursor: pointer;
     position: relative;
@@ -25,7 +22,6 @@
     user-select: none;
   }
   
-  /* Set all odd list items to a different color (zebra-stripes) */
   ul li:nth-child(odd) {
     background: #cfccdb;
   }
@@ -35,7 +31,7 @@
     background: #255a68;
   }
   
-  /* When clicked on, add a background color and strike out text */
+
   ul li.checked {
     background: #888;
     color: #fff;
@@ -56,7 +52,7 @@
     width: 7px;
   }
   
-  /* Style the close button */
+ 
   .close {
     position: absolute;
     right: 0;
@@ -68,8 +64,7 @@
     background-color: #f44336;
     color: white;
   }
-  
-  /* Style the header */
+
   .header {
     background-color: #f436cb;
     padding: 50px 60px;
@@ -85,7 +80,6 @@
     clear: both;
   }
   
-  /* Style the input */
   input {
     margin: 0;
     border: none;
@@ -97,7 +91,6 @@
     border-radius: 15px;
   }
   
-  /* Style the "Add" button */
   .addBtn {
     padding: 15px;
     width: 25%;
